@@ -1,4 +1,4 @@
-# Using Github in LPO-8800
+# Using Github in LPO-7870
 
 ## What is Github?
 
