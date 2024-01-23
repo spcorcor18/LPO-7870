@@ -11,6 +11,7 @@ This is a running list of code from Data I and Data II:
 cd 				//change directory
 use 			//load a dataset into STATA
 sysuse 			//use a system dataset
+ssc install // install packages (for example "ssc install fre")
 
 * Examining Data:
 browse 			//browse the data spreadsheet-style
@@ -18,6 +19,7 @@ describe 		//describe the variables in the loaded dataset
 count 			//count the number of (total) observations
 summarize 		//summarize data (e.g. mean, min, max, standard deviation)
 tabulate		//frequency distribution of variable
+fre    //see the values a variable can take on (remember to install)
 
 * Graphs:
 histogram		//creates a histogram
@@ -51,9 +53,11 @@ display invttail(df, prob)	//convert probability to t-stat (one-tailed)
 
 
 * Relationships between two variables
+bysort x1: sum x2   // can use to see distribution of x2 for each value of x1 (x1= categorical (treatment), x2=dependent)
 pwcorr x1 x2, sig	//correlation and p-value for two variables
+ci means x1     // confidence interval of x1
 ttest x1=x2			//dependent t-test
-ttest x1, by(x2)	//independnet t-test
+ttest x1, by(x2)	//independent t-test
 oneway x1 x2		//oneway ANOVA (x1=dependent variable, x2=categories)
 anova x1 x2 x3		//twoway ANOVA
 
