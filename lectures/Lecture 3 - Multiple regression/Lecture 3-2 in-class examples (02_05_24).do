@@ -93,3 +93,10 @@ reg wage college
 
 ** for comparison see the ttest for differences in means
 ttest wage, by(college)
+
+** scatter plot wage vs education
+scatter wage educ
+
+** regression without and with robust option
+reg wage educ
+reg wage educ, robust
