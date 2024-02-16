@@ -62,7 +62,8 @@ oneway x1 x2		//oneway ANOVA (x1=dependent variable, x2=categories)
 anova x1 x2 x3		//twoway ANOVA
 
 * Relationships between more than two variables
-regress x1 x2 x3	//regression (x1 = dependent variable)
+regress x1 x2 x3 x4	//regression (x1 = dependent variable)
+test x3 x4 // f-test for multiple variables
 
 
 * To learn more about the options for each command, type "help" in front of a command:
