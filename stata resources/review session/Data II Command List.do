@@ -65,16 +65,20 @@ anova x1 x2 x3		//twoway ANOVA
 
 * Relationships between more than two variables
 regress x1 x2 x3	//regression (x1 = dependent variable)
+predict pred, xb  // gives the Yhat output of the regression equation for each observation in a new variable "pred"
 
 * Creating data for testing
 set obs ###  // sets the number of observations for the data set
 set seed ###  // sets a seed for the computer to create a randomized number from - good for getting a consistent randomization
 
+* Data Checks
+nmissing  // will tell you the number of missing values
+assert (logical expression) // used to test if something is happening - will quit the program if not true
+
 * Other
 gen x = rbinomial(n,k) // creates a random variable that is binomially distributed
 gen y = rnormal(mu,sd) // creates a random variable that is normally distributed
 gen z = runiform()  // creates a random variable that is uniformly distributed from 0 to 1
-assert (logical expression) // used to test if something is happening - will quit the program if not true
 merge 1:1 x using "update file path here"  // puts together the active data set and the using data set based on x
 
 
